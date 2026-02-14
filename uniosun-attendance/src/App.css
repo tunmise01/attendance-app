@@ -1,0 +1,473 @@
+/* --- GLOBAL RESET & FONTS --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f8fafc;
+  color: #1e293b;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- LAYOUT CONTAINERS --- */
+.app-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container.setup-mode {
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f5f9;
+}
+
+/* --- LOGIN SCREEN --- */
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-icon {
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.login-card h2 {
+  margin: 0 0 10px;
+  color: #0f172a;
+}
+
+.login-card p {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.login-input:focus {
+  border-color: #16a34a;
+  outline: none;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+  background-color: #15803d;
+}
+
+/* --- SETUP SCREEN --- */
+.setup-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+}
+
+.setup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.setup-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #16a34a;
+}
+
+.setup-info {
+  color: #64748b;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.setup-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.setup-input:focus {
+  border-color: #16a34a;
+  outline: none;
+}
+
+.btn-start-attendance {
+  width: 100%;
+  padding: 14px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-start-attendance:hover {
+  background-color: #15803d;
+}
+
+
+/* --- DASHBOARD HEADER --- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f1f5f9;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand .icon {
+  color: #16a34a;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.btn-icon-only {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #94a3b8;
+  padding: 8px;
+  border-radius: 50%;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.btn-icon-only:hover {
+  color: #ef4444;
+  background-color: #fef2f2;
+}
+
+/* --- STATS CARDS --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.stat-card.highlight {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+.stat-card.highlight .stat-value {
+  color: #15803d;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* --- BUTTONS --- */
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-scan { flex: 2; }
+.btn-pdf { flex: 1; }
+
+.btn-primary { background-color: #16a34a; color: white; }
+.btn-primary:hover { background-color: #15803d; }
+
+.btn-danger { background-color: #ef4444; color: white; }
+.btn-danger:hover { background-color: #dc2626; }
+
+.btn-secondary { background-color: #0f172a; color: white; }
+.btn-secondary:hover { background-color: #1e293b; }
+
+
+/* --- SCANNER --- */
+.scanner-container {
+  margin-bottom: 25px;
+  background: black;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+#reader {
+  width: 100%;
+}
+
+/* Hide default HTML5QrcodeScanner branding */
+#reader img[alt="Info icon"],
+#reader div[style*="opacity: 0.8"],
+#reader select {
+  display: none !important;
+}
+
+.scanner-instruction {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  margin: 0;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* --- STATUS BANNER --- */
+.status-banner {
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.status-banner.success { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+.status-banner.error { background: #fee2e2; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* --- STUDENT LIST --- */
+.list-container {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background: #f8fafc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.list-body {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.1s;
+}
+
+.student-row:last-child {
+  border-bottom: none;
+}
+
+.student-row.present {
+  background-color: #f0fdf4;
+}
+
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+}
+
+.student-info .name {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+.student-info .matric {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.student-status-right {
+  text-align: right;
+}
+
+.status-pill {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+.status-pill.present { background: #dcfce7; color: #15803d; }
+.status-pill.absent { background: #f1f5f9; color: #94a3b8; }
+
+.checkin-time {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: #15803d;
+  font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 480px) {
+  .app-container { padding: 15px; }
+  .stats-grid { gap: 10px; }
+  .stat-card { padding: 15px; }
+  .stat-value { font-size: 1.75rem; }
+  .student-row { padding: 12px 15px; }
+  .avatar { width: 36px; height: 36px; }
+  .student-info .name { font-size: 0.95rem; }
+}
+/* Add this to the end of your CSS file */
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-text-danger {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 10px;
+}
